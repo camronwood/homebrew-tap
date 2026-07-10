@@ -1,0 +1,17 @@
+name: Audit casks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit and style casks
+        run: |
+          brew audit --cask --online --strict Casks/*
+          brew style --cask Casks/*
