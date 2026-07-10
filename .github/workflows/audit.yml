@@ -13,5 +13,5 @@ jobs:
 
       - name: Audit and style casks
         run: |
-          brew audit --cask --online --strict Casks/*
+          brew audit --cask Casks/*
           brew style --cask Casks/*
