@@ -1,14 +1,14 @@
 cask "neural-junkie" do
-  version "1.2.0-beta.5"
+  version "1.2.0-beta.6"
 
   on_arm do
-    sha256 "96a0d47fb7d3580bb186d9a8b607d9d98de34fcdca4fa3457b8d376a5ce530ef"
+    sha256 "417f02fc3b30ff4a5c6f6a381298a612214eed911e7cc24daaf945b7cd0965bc"
 
     url "https://github.com/camronwood/neural-junkie/releases/download/v#{version}/Neural.Junkie_#{version}_aarch64.dmg",
         verified: "github.com/camronwood/neural-junkie/"
   end
   on_intel do
-    sha256 "9916a304c654ea56ad40c658cd3c3c4ad4b7dfb2d69470f12e6eda6c54125b1f"
+    sha256 "1124afcfc71f00bbe5107e78b6f9d5cc0cd77f7c81527df4d7088853f17215aa"
 
     url "https://github.com/camronwood/neural-junkie/releases/download/v#{version}/Neural.Junkie_#{version}_x64.dmg",
         verified: "github.com/camronwood/neural-junkie/"

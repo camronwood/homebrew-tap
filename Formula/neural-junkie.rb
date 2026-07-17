@@ -1,7 +1,7 @@
 class NeuralJunkie < Formula
   desc "Multi-agent orchestration workspace with local-first AI"
   homepage "https://camronwood.github.io/neural-junkie/"
-  version "1.2.0-beta.5"
+  version "1.2.0-beta.6"
   license :cannot_represent
 
   on_macos do
@@ -15,7 +15,7 @@ class NeuralJunkie < Formula
 
   on_linux do
     url "https://github.com/camronwood/neural-junkie/releases/download/v#{version}/neural-junkie_#{version}_amd64.deb"
-    sha256 "c2f62c38c7b8e7c4fccdfd731b0877a108131bf373f17faa65f1f7817082dc32"
+    sha256 "6515e2a9558026d2e0a34eff086c5153b71fe44186e7d604615d727c11062cda"
 
     depends_on "at-spi2-core"
     depends_on "cairo"
