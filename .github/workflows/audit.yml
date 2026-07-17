@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  audit:
+  audit-cask:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v5
@@ -18,12 +18,25 @@ jobs:
           rm -rf "$TAP"
           ln -s "$GITHUB_WORKSPACE" "$TAP"
 
-      - name: Audit and style
+      - name: Audit and style cask
         run: |
           brew update
           # Name-based args only — Homebrew disables `brew audit [path ...]`.
           # Skip --online/--strict on beta prereleases (expected until stable).
           brew audit --cask camronwood/tap/neural-junkie
           brew style --cask camronwood/tap/neural-junkie
+
+  audit-formula:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Audit and style Linux formula
+        run: |
+          # Skip --online/--strict on beta prereleases (expected until stable).
           brew audit camronwood/tap/neural-junkie
           brew style camronwood/tap/neural-junkie
