@@ -5,7 +5,6 @@ class NeuralJunkie < Formula
   sha256 "6515e2a9558026d2e0a34eff086c5153b71fe44186e7d604615d727c11062cda"
   license :cannot_represent
 
-  depends_on :linux
   depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "dbus"
@@ -13,6 +12,7 @@ class NeuralJunkie < Formula
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "librsvg"
+  depends_on :linux
   depends_on "pango"
   depends_on "webkitgtk"
 
