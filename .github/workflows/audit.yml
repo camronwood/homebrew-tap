@@ -7,11 +7,23 @@ on:
 
 jobs:
   audit:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Audit and style casks
+      - name: Link checkout as local tap
         run: |
-          brew audit --cask Casks/*
-          brew style --cask Casks/*
+          TAP="$(brew --repository)/Library/Taps/camronwood/homebrew-tap"
+          mkdir -p "$(dirname "$TAP")"
+          rm -rf "$TAP"
+          ln -s "$GITHUB_WORKSPACE" "$TAP"
+
+      - name: Audit and style
+        run: |
+          brew update
+          # Name-based args only — Homebrew disables `brew audit [path ...]`.
+          # Skip --online/--strict on beta prereleases (expected until stable).
+          brew audit --cask camronwood/tap/neural-junkie
+          brew style --cask camronwood/tap/neural-junkie
+          brew audit camronwood/tap/neural-junkie
+          brew style camronwood/tap/neural-junkie
