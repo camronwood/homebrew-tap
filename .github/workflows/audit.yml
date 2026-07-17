@@ -33,10 +33,10 @@ jobs:
 
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c
 
       - name: Audit and style Linux formula
         run: |
           # Skip --online/--strict on beta prereleases (expected until stable).
-          brew audit camronwood/tap/neural-junkie
-          brew style camronwood/tap/neural-junkie
+          brew audit --formula camronwood/tap/neural-junkie
+          brew style --formula camronwood/tap/neural-junkie
