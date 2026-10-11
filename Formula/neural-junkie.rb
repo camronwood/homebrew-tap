@@ -1,8 +1,8 @@
 class NeuralJunkie < Formula
   desc "Multi-agent orchestration workspace with local-first AI"
   homepage "https://camronwood.github.io/neural-junkie/"
-  url "https://github.com/camronwood/neural-junkie/releases/download/v1.2.0-beta.21/Neural.Junkie_1.2.0-beta.21_amd64.deb"
-  sha256 "50d24fb0b8f353a8d5eab97e2b15125bb7dd34d53d57a9e9c1321ae230cb436d"
+  url "https://github.com/camronwood/neural-junkie/releases/download/v1.2.0-beta.32/Neural.Junkie_1.2.0-beta.32_amd64.deb"
+  sha256 "5328a917ef448dff4954cdaaba097bf62a34c16838d26f232265be9c3f0f819a"
   license :cannot_represent
 
   depends_on "at-spi2-core"
